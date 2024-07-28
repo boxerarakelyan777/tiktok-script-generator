@@ -1,30 +1,29 @@
+// src/components/Header.tsx
 "use client";
 
+import React from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
-  };
-
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-800">
-      <div className="text-xl font-bold">AI TikTok Script Generator</div>
-      <nav className="flex gap-4">
+    <header>
+      <div className="brand">Scriptinite</div>
+      <nav>
         <Link href="/" legacyBehavior>
-          <a className="text-lg">Home</a>
+          <a>Home</a>
+        </Link>
+        <Link href="/ai" legacyBehavior>
+          <a>AI Tool</a>
         </Link>
       </nav>
-      <button
-        onClick={toggleDarkMode}
-        className="p-2 bg-blue-500 text-white rounded"
+      <a
+        href="https://github.com/boxerarakelyan777/tiktok-script-generator"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="github-button"
       >
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
-      </button>
+        GitHub
+      </a>
     </header>
   );
 };

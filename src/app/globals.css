@@ -1,42 +1,211 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* src/app/globals.css */
+/* Global Styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
-
-body {
-  @apply font-sans;
+p {
+  margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility Classes */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+/* Dark Mode */
 .dark-mode {
-  @apply bg-gray-900 text-white;
+  background-color: #1a202c;
+  color: #cbd5e0;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f7fafc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+header nav a {
+  padding: 0.5rem 1rem;
+  color: #4a5568;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #2d3748;
+}
+
+.github-button {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.github-button:hover {
+  background-color: #444;
+}
+
+/* Hero Section Styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  background-color: #f7fafc;
+  padding-top: 10vh;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #2d3748;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #4a5568;
+}
+
+.hero form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hero button {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #3182ce;
+  border: none;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.hero button:hover {
+  background-color: #2b6cb0;
+}
+
+.hero input,
+.hero textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.hero input:focus,
+.hero textarea:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+  outline: none;
+}
+
+.hero textarea {
+  height: 200px; /* Set initial height for the textarea */
+  resize: vertical;
+}
+
+/* AI Tool Page Styles */
+.ai-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  background-color: #f7fafc;
+  padding: 2rem;
+}
+
+.ai-tool h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+}
+
+.ai-tool textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
+  height: 200px; /* Set initial height for the textarea */
+  resize: vertical;
+}
+
+.ai-tool button {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #3182ce;
+  border: none;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.ai-tool button:hover {
+  background-color: #2b6cb0;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f7fafc;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  color: #4a5568;
 }
